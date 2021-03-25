@@ -10,6 +10,7 @@ public class HelloTest {
 
 	@Test
 	public void test() {
+	//	fail();
 		Hello hello = new Hello();
 		assert(hello.isAlive());
 	}
