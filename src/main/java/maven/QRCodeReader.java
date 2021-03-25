@@ -29,7 +29,6 @@ public class QRCodeReader {
 
     public static void main(String[] args) {
         try {
-           // File file = new File("qr.png");
         	 String resourceName = "qr.png";
              URL resource = ClassLoader.getSystemResource(resourceName);
              String configPath = URLDecoder.decode(resource.getFile(), "UTF-8");
