@@ -27,7 +27,8 @@ public class QRCodeReader {
 
     public static void main(String[] args) {
         try {
-            File file = new File("qr.png");
+           // File file = new File("qr.png");
+            File file = new File("C:\\Users\\irina\\Documents\\GitHub\\THU-maven\\src\\test\\resources\\qr.png");
             String decodedText = decodeQRCode(file);
             if(decodedText == null) {
                 System.out.println("No QR Code found in the image");
