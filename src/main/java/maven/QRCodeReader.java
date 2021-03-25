@@ -7,6 +7,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
+import java.net.URLDecoder;
 
 public class QRCodeReader {
 
@@ -28,7 +30,11 @@ public class QRCodeReader {
     public static void main(String[] args) {
         try {
            // File file = new File("qr.png");
-            File file = new File("C:\\Users\\irina\\Documents\\GitHub\\THU-maven\\src\\test\\resources\\qr.png");
+        	 String resourceName = "qr.png";
+             URL resource = ClassLoader.getSystemResource(resourceName);
+             String configPath = URLDecoder.decode(resource.getFile(), "UTF-8");
+             File file = new File(configPath);
+            //File file = new File("C:\\Users\\irina\\Documents\\GitHub\\THU-maven\\src\\test\\resources\\qr.png");
             String decodedText = decodeQRCode(file);
             if(decodedText == null) {
                 System.out.println("No QR Code found in the image");
